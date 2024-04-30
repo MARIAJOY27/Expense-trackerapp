@@ -17,7 +17,7 @@ function Add() {
 
     return (
         <>
-
+                 {/* <h1>hgff</h1> */}
             <div className='d-flex justify-content-center align-items-center'>
                 <button onClick={handleShow} className='btn btn-warning'><FontAwesomeIcon icon={faPlus} style={{ color: "#e8eaed", }} className='me-2' /> Add new income</button>
             </div>
