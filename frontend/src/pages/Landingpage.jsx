@@ -13,7 +13,7 @@ function Landingpage() {
             </div>
             <div className="col-md-1"></div>
             <div className="col-md-5">
-                <img src="https://cdn.dribbble.com/users/827787/screenshots/5930698/digital-strategy.gif " width={'350px'} alt="" />
+                <img src="https://cdn.dribbble.com/users/827787/screenshots/5930698/digital-strategy.gif" width={'350px'} alt="" />
             </div>
           </div >
           
