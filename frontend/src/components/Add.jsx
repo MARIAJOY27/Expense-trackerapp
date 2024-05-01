@@ -5,7 +5,8 @@ import chart from '../assets/lg1.gif'
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-
+import { toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 
 
 function Add() {
@@ -14,6 +15,30 @@ function Add() {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  //state to store video details
+
+  const [income,setIncome] = useState({
+        title:"",
+        amount:"",
+        date:"",
+        reference:""
+   })
+
+//    console.log(income); 
+
+// function to upload income details
+    
+const handleUpload = ()=>{
+    const{title,amount,date,reference}=income
+
+      if(!title || !amount|| !date|| !reference){
+        toast.info('please fill the form completely')
+      }else{
+        toast.success('income added successfully')
+        handleClose()
+      }
+}
 
     return (
         <>
@@ -28,12 +53,12 @@ function Add() {
                 </Modal.Header>
                 <Modal.Body>
 
-                      <form className='text-center border border-light rounded '>
-                          <input className='mb-2 rounded' type="text" placeholder='Salary Title' /><br />
-                          <input className='mb-2 rounded' type="number" placeholder='Salary Amount' /><br />
+                      <form className='text-center border border-light rounded w-100 '>
+                          <input onChange={(e)=>setIncome({...income,title:e.target.value})} className='mb-2 rounded' type="text" placeholder='Salary Title' /><br />
+                          <input onChange={(e)=>setIncome({...income,amount:e.target.value})} className='mb-2 rounded' type="text" placeholder='Salary Amount' /><br />
+                          <input style={{width:'225px'}} onChange={(e)=>setIncome({...income,date:e.target.value})} className='mb-2 date rounded' type="date" placeholder='Enter a date' /><br />
+                          <textarea onChange={(e)=>setIncome({...income,reference:e.target.value})} className='textArea rounded' name="" id="" cols="30" rows="10" placeholder='Add a reference'></textarea>
                           
-                          <textarea className='textArea rounded' name="" id="" cols="30" rows="10" placeholder='Add a reference'></textarea><br />
-                          <input className='mb-2 date rounded' type="date" placeholder='Enter a date' />
                          
                        </form> 
 
@@ -42,7 +67,7 @@ function Add() {
                     <Button variant="secondary" onClick={handleClose}>
                         Cancel
                     </Button>
-                    <Button variant="warning" onClick={handleClose}>
+                    <Button variant="warning" onClick={handleUpload}>
                         Add
                     </Button>
                 </Modal.Footer>
@@ -51,6 +76,9 @@ function Add() {
             <div className='d-flex   mt-1'>
                 <img src={chart} width={'100%'} height={'320px'} alt="" />
             </div>
+
+
+            <ToastContainer theme='colored' position='top-center' autoClose={2000} />
 
         </>
     )

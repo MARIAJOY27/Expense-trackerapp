@@ -3,13 +3,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import './Income.css'
 import {  faChartSimple, faGlobe, faHouse, faMoneyBill, faTrash, faUser, faWallet } from '@fortawesome/free-solid-svg-icons'
 import Add from '../components/Add'
+import { Link } from 'react-router-dom'
 
 
 
 function Income() {
   return (
-    <>
-        <div className="row mt-4 ms-5">
+    <div className='mx-3'>
+        <div className="row mt-4 ">
           <div className="col-md-2 pt-5  one">
                <div className='d-flex mt-3 ms-4'>
                <FontAwesomeIcon icon={faUser}   className='me-4 fa-2x' />
@@ -17,26 +18,30 @@ function Income() {
                </div>
                <div className='mt-5'>
                   <ul>
-                    <a href=''style={{textDecoration:'none'}}>
+                    <Link to={'/'} style={{textDecoration:'none'}}>
                       <li>
                         <h6 className='text-dark'><FontAwesomeIcon icon={faHouse} className='me-3 mb-1' />Home</h6>
                       </li>
-                    </a>
-                    <a href='' style={{textDecoration:'none'}}>
+                    </Link>
+                    <Link to={'/income'}  style={{textDecoration:'none'}}>
                       <li>
                       <h6 className='text-dark'><FontAwesomeIcon icon={faWallet} className='me-3 mb-1' /> Incomes</h6>
                       </li>
-                    </a>
-                    <a href='' style={{textDecoration:'none'}}>
-                      <li>
-                      <h6 className='text-dark'><FontAwesomeIcon icon={faMoneyBill} className='me-3' /> Expenses</h6>
-                      </li>
-                    </a>
-                    <a href='' style={{textDecoration:'none'}}>
-                      <li>
-                      <h6 className='text-dark'><FontAwesomeIcon icon={faChartSimple} className='me-4'/>Report</h6>
-                      </li>
-                    </a>
+                    </Link>
+                   
+                      <Link to={'/expenses'} style={{textDecoration:'none'}}>
+                        <li>
+                        <h6 className='text-dark'><FontAwesomeIcon icon={faMoneyBill} className='me-3' /> Expenses</h6>
+                        </li>
+                      </Link>
+                    
+                    
+                      <Link to={'/report'} style={{textDecoration:'none'}}>
+                        <li>
+                        <h6 className='text-dark'><FontAwesomeIcon icon={faChartSimple} className='me-4'/>Report</h6>
+                        </li>
+                      </Link>
+                   
                   </ul>
                </div>
           </div>
@@ -48,14 +53,8 @@ function Income() {
 
                   <div className="row mt-2 pt-5">
                      <div className="col-md-4  ps-4">
-                       {/* <form action="">
-                          <input className='mb-2' type="text" placeholder='Salary Title' />
-                          <input className='mb-2' type="number" placeholder='Salary Amount' />
-                          <input className='mb-2 date' type="date" placeholder='Enter a date' />
-                          <textarea className='textArea' name="" id="" cols="30" rows="10" placeholder='Add a reference'></textarea>
-                          <button className='text-light bg-danger p-2 rounded ms-3'><FontAwesomeIcon icon={faPlus} style={{color: "#e8eaed",}}  className='me-2' /> Add Income</button>
-                       </form> */}
-                       <Add/>
+                     
+                       <Add />
                      </div>
                      {/* <div className="col-md-1"></div> */}
                      <div className="col-md-7  ">
@@ -128,7 +127,7 @@ function Income() {
                  </div>
           </div>
       </div>  
-    </>
+    </div>
   )
 }
 
