@@ -1,18 +1,19 @@
-import React, { useState } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUser ,faHouse,faWallet,faMoneyBill,faSquarePollVertical,faPlus,faReceipt,faTrash} from '@fortawesome/free-solid-svg-icons'
-import { toast } from 'react-toastify';
-import { ToastContainer } from 'react-toastify';
+import React, { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser, faHouse, faWallet, faMoneyBill, faSquarePollVertical, faPlus, faReceipt, faTrash} from '@fortawesome/free-solid-svg-icons';
+import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { Link } from 'react-router-dom';
+import { uploadExpenseAPI } from '../Services/allAPI';
 
 
 
 function Expenses() {
-  const[show,setShow]=useState(false)
-  const[details,setDetails]=useState({
+  
+  const [show,setShow]=useState(false)
+  const [details,setDetails]=useState({
     
     title:"",
     amount:"",
@@ -25,13 +26,18 @@ function Expenses() {
   const handleShow = () => setShow(true);
 
  
-    const handleUpload=()=>{
-      const{title,amount,date,info}=details
+ //Adding Expense
+    const handleUpload= async()=>{
+      const {title,amount,date,info} = details
       if(!title || !amount|| !date|| !info){
         toast.info('please fill the form completely')
       }else{
-        toast.success('Expense added successfully')
+       const response =await uploadExpenseAPI(details)
+       console.log(response);
+      
+        toast.success('Expense added successfully ')
         handleClose()
+       
       }
     }
  
@@ -119,7 +125,7 @@ function Expenses() {
                    </div>
                    <div className='m-3 p-1'style={{backgroundColor:'aquamarine',}}>
                    
-                   <h5 style={{overflowY:'hidden'}}> <FontAwesomeIcon icon={faReceipt} className='pe-5' /> Medical Expense <FontAwesomeIcon icon={faTrash}  className='ps-5 ms-5' /></h5>
+                   <h5 style={{overflowY:'hidden'}}> <FontAwesomeIcon icon={faReceipt} className='pe-5' /> Medical Expense <FontAwesomeIcon icon={faTrash}  className='ps-5 ms-5 ' /></h5>
                    <div className='d-flex ms-4 pt-1'><h6 style={{overflowY:'hidden'}} className='pe-5'>₹15</h6>
                    <h6 style={{overflowY:'hidden'}} className='pe-5'>12/01/2024</h6>
                    <h6 style={{overflowY:'hidden'}} className='pe-5'>body check up</h6>

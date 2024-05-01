@@ -1,0 +1,41 @@
+{
+  "expenses": [
+    {
+      "title": "House Loan",
+      "amount": "25000",
+      "date": "2024-05-01",
+      "info": "EMi",
+      "id": 1
+    },
+    {
+      "title": "House Loan",
+      "amount": "25000",
+      "date": "2024-05-01",
+      "info": "EMI",
+      "id": 2
+    }
+  ],
+  "incomes": [
+    {
+      "title": "Freelance",
+      "amount": "20000",
+      "date": "2024-04-19",
+      "reference": "First",
+      "id": 1
+    },
+    {
+      "title": "Developer",
+      "amount": "35000",
+      "date": "2024-04-20",
+      "reference": "Second",
+      "id": 2
+    },
+    {
+      "title": "youtube revenue",
+      "amount": "2000",
+      "date": "2024-04-30",
+      "reference": "my channel revenue",
+      "id": 3
+    }
+  ]
+}
