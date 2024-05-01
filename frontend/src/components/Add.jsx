@@ -7,6 +7,7 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { toast } from 'react-toastify';
 import { ToastContainer } from 'react-toastify';
+import { uploadIncomeAPI } from '../Services/allAPI';
 
 
 function Add() {
@@ -29,14 +30,18 @@ function Add() {
 
 // function to upload income details
     
-const handleUpload = ()=>{
+const handleUpload = async()=>{
     const{title,amount,date,reference}=income
 
       if(!title || !amount|| !date|| !reference){
         toast.info('please fill the form completely')
       }else{
-        toast.success('income added successfully')
+        
+         const response = await uploadIncomeAPI (income)
+         console.log(response);
+         toast.success('income added successfully')
         handleClose()
+
       }
 }
 

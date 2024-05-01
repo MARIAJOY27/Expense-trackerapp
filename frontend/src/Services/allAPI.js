@@ -5,7 +5,7 @@
 import { serverURL } from "./baseUrl"
 import { commonAPI } from "./commonAPI"
 
- export const uploadIncome = async(reqBody) =>{
+ export const uploadIncomeAPI = async(reqBody) =>{
      return await commonAPI('POST',`${serverURL}/incomes`,reqBody)
      
 }
