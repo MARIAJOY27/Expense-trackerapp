@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
 
 
 
-function Dashboard() {
+function Expenses() {
   const[show,setShow]=useState(false)
   const[details,setDetails]=useState({
     
@@ -143,4 +143,4 @@ function Dashboard() {
   )
 }
 
-export default Dashboard              
+export default Expenses              
