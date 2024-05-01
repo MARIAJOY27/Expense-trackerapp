@@ -9,7 +9,7 @@ function Landingpage() {
             <div className="col-md-1"></div>
             <div className="col-md-5">
                 <h4  style={{overflowY:"hidden",color:"lightblue"}}>What is an Expense tracker?</h4>
-                <p> Keeping a daily record of your expenses by tracking receipts, invoices, and other outgoing expenses improves the financial health of your budget.Expense tracking means recording all your expenditures so you have a clear and detailed understanding of your budget.This can be achieved with the help of an expense tracker which enables you to monitor how much of your budget has been spent over time, to see how much is remaining and course-correct when necessary. </p>
+                <p style={{textAlign:"justify"}}> Keeping a daily record of your expenses by tracking receipts, invoices, and other outgoing expenses improves the financial health of your budget.Expense tracking means recording all your expenditures so you have a clear and detailed understanding of your budget.This can be achieved with the help of an expense tracker which enables you to monitor how much of your budget has been spent over time, to see how much is remaining and course-correct when necessary. </p>
             </div>
             <div className="col-md-1"></div>
             <div className="col-md-5">

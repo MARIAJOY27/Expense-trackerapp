@@ -13,3 +13,11 @@ import { commonAPI } from "./commonAPI"
 export const uploadExpenseAPI = async(reqBody)=>{
     return await commonAPI('POST',`${serverURL}/expenses`,reqBody)
 }
+//api to get uploaded expense
+export const getUploadExpenseAPI = async()=>{
+    return await commonAPI('GET',`${serverURL}/expenses`,"")
+}
+//api to delete an expense
+export const deleteAnExpenseAPI= async(id)=>{
+    return await commonAPI('DELETE',`${serverURL}/expenses/${id}`,{})
+}

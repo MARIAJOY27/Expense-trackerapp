@@ -1,20 +1,5 @@
 {
-  "expenses": [
-    {
-      "title": "House Loan",
-      "amount": "25000",
-      "date": "2024-05-01",
-      "info": "EMi",
-      "id": 1
-    },
-    {
-      "title": "House Loan",
-      "amount": "25000",
-      "date": "2024-05-01",
-      "info": "EMI",
-      "id": 2
-    }
-  ],
+  "expenses": [],
   "incomes": [
     {
       "title": "Freelance",
