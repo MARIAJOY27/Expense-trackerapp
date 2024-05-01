@@ -1,8 +1,7 @@
-import React, { useState } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUser ,faHouse,faWallet,faMoneyBill,faSquarePollVertical,faPlus,faReceipt,faTrash} from '@fortawesome/free-solid-svg-icons'
-import { toast } from 'react-toastify';
-import { ToastContainer } from 'react-toastify';
+import React, { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser, faHouse, faWallet, faMoneyBill, faSquarePollVertical, faPlus, faReceipt, faTrash} from '@fortawesome/free-solid-svg-icons';
+import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
@@ -10,9 +9,9 @@ import { Link } from 'react-router-dom';
 
 
 
-function Dashboard() {
-  const[show,setShow]=useState(false)
-  const[details,setDetails]=useState({
+function Expenses() {
+  const [show,setShow]=useState(false)
+  const [details,setDetails]=useState({
     
     title:"",
     amount:"",
@@ -26,7 +25,7 @@ function Dashboard() {
 
  
     const handleUpload=()=>{
-      const{title,amount,date,info}=details
+      const {title,amount,date,info} = details
       if(!title || !amount|| !date|| !info){
         toast.info('please fill the form completely')
       }else{
@@ -143,4 +142,4 @@ function Dashboard() {
   )
 }
 
-export default Dashboard              
+export default Expenses              
