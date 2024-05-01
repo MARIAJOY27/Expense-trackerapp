@@ -1,3 +1,19 @@
 {
-    "expenses":[]
+  "expenses": [],
+  "incomes": [
+    {
+      "title": "Freelance",
+      "amount": "20000",
+      "date": "2024-04-19",
+      "reference": "First",
+      "id": 1
+    },
+    {
+      "title": "Developer",
+      "amount": "35000",
+      "date": "2024-04-20",
+      "reference": "Second",
+      "id": 2
+    }
+  ]
 }
