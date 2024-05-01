@@ -14,6 +14,20 @@
       "date": "2024-04-20",
       "reference": "Second",
       "id": 2
+    },
+    {
+      "title": "Baking",
+      "amount": "5000",
+      "date": "2024-04-03",
+      "reference": "Cake Baking",
+      "id": 3
+    },
+    {
+      "title": "vhg",
+      "amount": "676",
+      "date": "2024-05-14",
+      "reference": "hgf",
+      "id": 4
     }
   ]
 }
