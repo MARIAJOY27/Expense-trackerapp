@@ -17,7 +17,7 @@ function Add({setIncomesUploadStatus}) {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  //state to store video details
+  //state to store income details
 
   const [income,setIncome] = useState({
         title:"",
