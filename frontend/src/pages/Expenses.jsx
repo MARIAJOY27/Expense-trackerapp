@@ -146,7 +146,7 @@ setExpenseDeleteStatus(false)
                   <div className='m-3 p-1 'style={{backgroundColor:'aquamarine'}} expenseUploadstatus={expenseUploadstatus} setExpenseUploadStatus={setExpenseUploadStatus} expenseDeleteStatus={expenseDeleteStatus} setExpenseDeleteStatus={setExpenseDeleteStatus}>
                    
                   <h5 style={{overflowY:'hidden'}}> <FontAwesomeIcon icon={faReceipt} className='pe-5' />{item?.title}<FontAwesomeIcon icon={faTrash}  className='ps-5 ms-5 text-danger' onClick={()=>handleDelete(item?.id)} /></h5>
-                  <div className='d-flex ms-4 pt-1'><h6 style={{overflowY:'hidden'}} className='pe-5'>{item?.amount}</h6>
+                  <div className='d-flex ms-4 pt-1'><h6 style={{overflowY:'hidden'}} className='pe-5'>₹{item?.amount}</h6>
                   <h6 style={{overflowY:'hidden'}} className='pe-5'>{item?.date}</h6>
                   <h6 style={{overflowY:'hidden'}} className='pe-5'>{item?.info}</h6>
                   </div>

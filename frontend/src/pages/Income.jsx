@@ -112,7 +112,7 @@ function Income() {
                         <button onClick={()=>handleDelete(item.id)} className='btn trash-btn text-danger  ms-auto pt-2'><FontAwesomeIcon icon={faTrash} className='fa-2x' /></button>
                       </div>
                       <div className="d-flex align-items-center justify-content-evenly ">
-                        <h6 className='text-light innersource'><b>{item.amount}</b></h6>
+                        <h6 className='text-light innersource'><b>₹{item.amount}</b></h6>
                         <h6 className='text-light innersource'><b>{item.date}</b></h6>
                         <h6 className='text-light innersource'><b>{item.reference}</b></h6>
                       </div>

@@ -112,24 +112,26 @@ function Report() {
             </tr>
           </thead>
           <tbody>
-            <tr className='text-center'>
+           {expRep.length>0? expRep?.map((item)=>(<tr className='text-center'>
+              <td>{item?.date}</td>
+              <td>{item?.title}</td>
+              <td>{item?.info}</td>
+              <td>-₹{item?.amount}</td>
+            </tr>)): <h5>No expense added yet</h5>}
+            {incomeRep.length>0?incomeRep?.map((item)=>(
+              <tr className='text-center'>
+              <td>{item?.date}</td>
+              <td>{item?.title}</td>
+              <td>{item?.reference}</td>
+              <td>+₹{item?.amount}</td>
+            </tr>
+            )):<h5>No income added yet</h5>}
+            {/* <tr className='text-center'>
               <td>30-04-2024</td>
               <td>Tesco</td>
               <td>Groceries</td>
               <td>$55</td>
-            </tr>
-            <tr className='text-center'>
-              <td>30-04-2024</td>
-              <td>Tesco</td>
-              <td>Groceries</td>
-              <td>$55</td>
-            </tr>
-            <tr className='text-center'>
-              <td>30-04-2024</td>
-              <td>Tesco</td>
-              <td>Groceries</td>
-              <td>$55</td>
-            </tr>
+            </tr> */}
           </tbody>
         </Table>
       </div>
