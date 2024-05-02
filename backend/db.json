@@ -6,6 +6,13 @@
       "date": "2024-04-29",
       "info": "My housing loan",
       "id": 1
+    },
+    {
+      "title": "jyfuj",
+      "amount": "10000",
+      "date": "2024-05-22",
+      "info": "ghh",
+      "id": 2
     }
   ],
   "incomes": [
@@ -24,10 +31,10 @@
       "id": 2
     },
     {
-      "title": "youtube revenue",
-      "amount": "2000",
-      "date": "2024-04-30",
-      "reference": "my channel revenue",
+      "title": "Baking",
+      "amount": "5000",
+      "date": "2024-04-03",
+      "reference": "Cake Baking",
       "id": 3
     }
   ]

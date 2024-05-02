@@ -10,7 +10,7 @@ import { ToastContainer } from 'react-toastify';
 import { uploadIncomeAPI } from '../Services/allAPI';
 
 
-function Add() {
+function Add({setIncomesUploadStatus}) {
 
     const [show, setShow] = useState(false);
 
@@ -39,8 +39,26 @@ const handleUpload = async()=>{
         
          const response = await uploadIncomeAPI (income)
          console.log(response);
-         toast.success('income added successfully')
-        handleClose()
+
+         if(response.status >= 200 && response.status < 300){
+            toast.success('income added successfully')
+            setIncomesUploadStatus(true)
+             setIncome({
+                title:"",
+                amount:"",
+                date:"",
+                reference:""
+             })
+
+             handleClose()
+        }
+
+        else{
+            console.log(response);
+            toast.error('Something Went Wrong')
+        }
+        
+          
 
       }
 }
