@@ -3,39 +3,32 @@
     {
       "title": "House Loan",
       "amount": "10000",
-      "date": "2024-04-29",
-      "info": "My housing loan",
+      "date": "2024-05-01",
+      "info": "My housing loan ",
       "id": 1
     },
     {
-      "title": "jyfuj",
-      "amount": "10000",
-      "date": "2024-05-22",
-      "info": "ghh",
+      "title": "Travelling",
+      "amount": "2000",
+      "date": "2024-04-30",
+      "info": "Petrol amount on bike",
       "id": 2
     }
   ],
   "incomes": [
-    {
-      "title": "Freelance",
-      "amount": "20000",
-      "date": "2024-04-19",
-      "reference": "First",
-      "id": 1
-    },
-    {
-      "title": "Developer",
-      "amount": "35000",
-      "date": "2024-04-20",
-      "reference": "Second",
-      "id": 2
-    },
     {
       "title": "Baking",
       "amount": "5000",
       "date": "2024-04-03",
       "reference": "Cake Baking",
       "id": 3
+    },
+    {
+      "title": "Salary",
+      "amount": "20000",
+      "date": "2024-05-01",
+      "reference": "Job Salary",
+      "id": 4
     }
   ]
 }
