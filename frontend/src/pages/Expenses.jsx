@@ -1,6 +1,4 @@
              
-
-
 import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faHouse, faWallet, faMoneyBill, faSquarePollVertical, faPlus, faReceipt, faTrash} from '@fortawesome/free-solid-svg-icons';
@@ -9,15 +7,13 @@ import 'react-toastify/dist/ReactToastify.css';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { Link } from 'react-router-dom';
-import { deleteAnExpenseAPI,  getUploadExpenseAPI, uploadExpenseAPI } from '../Services/allAPI';
+import { deleteAnExpenseAPI, getUploadExpenseAPI, uploadExpenseAPI } from '../Services/allAPI';
 
 
 
 function Expenses() {
   //state to hold the expense
   const[expense,setExpense]=useState([])
- 
-  
 
   const[expenseUploadstatus,setExpenseUploadStatus]=useState({})
   const[expenseDeleteStatus,setExpenseDeleteStatus]=useState(false)
@@ -30,7 +26,6 @@ function Expenses() {
     info:""
   })
   console.log(details);
-  
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -48,10 +43,12 @@ function Expenses() {
         
         toast.success('Expense added successfully ')
         setExpenseUploadStatus(response.data)
-        
-        
-     const  Amount= setDetails.amount
-       console.log(Amount)
+        setDetails({
+          title:"",
+          amount:"",
+          date:"",
+          info:""
+        })
         handleClose()
       }else{
         console.log(response);
@@ -64,17 +61,14 @@ function Expenses() {
  const getExpense=async()=>{
    const result= await getUploadExpenseAPI()
    setExpense(result.data)
-  
+   }
 
-}
-//for expense sum
-console.log(expense);
-let sum=0
-for(let i=0;i<expense.length;i++){
-  // console.log(expense[i].amount);
-  sum+=Number(expense[i].amount)
-}
-
+   console.log(expense)
+   let sum=0
+   for(let i=0;i<expense.length;i++){
+    sum+=Number(expense[i].amount)
+   }
+   console.log(sum)
 
 //delete expense
 const handleDelete=async(id)=>{
@@ -84,10 +78,9 @@ const handleDelete=async(id)=>{
 }
 
 
-
 useEffect(()=>{
   getExpense()
-  setExpenseDeleteStatus(false)
+setExpenseDeleteStatus(false)
 },[expenseUploadstatus,expenseDeleteStatus])
 
  
@@ -142,7 +135,7 @@ useEffect(()=>{
           <Button variant="warning" onClick={handleClose}>
             Close
           </Button>
-          <Button variant="success" onClick={handleUpload} >
+          <Button variant="success" onClick={handleUpload}>
             Add
           </Button>
         </Modal.Footer>
@@ -153,8 +146,8 @@ useEffect(()=>{
                 {expense.length>0?expense?.map((item)=>(
                   <div className='m-3 p-1 'style={{backgroundColor:'aquamarine'}} expenseUploadstatus={expenseUploadstatus} setExpenseUploadStatus={setExpenseUploadStatus} expenseDeleteStatus={expenseDeleteStatus} setExpenseDeleteStatus={setExpenseDeleteStatus}>
                    
-                  <h5 style={{overflowY:'hidden'}}> <FontAwesomeIcon icon={faReceipt} className='pe-5 me-5' />{item?.title}<FontAwesomeIcon icon={faTrash}  className='ps-5 ms-5 text-danger' onClick={()=>handleDelete(item?.id)} /></h5>
-                  <div className='d-flex ms-4 pt-1'><h6 style={{overflowY:'hidden'}} className='pe-5'>₹{item?.amount}</h6>
+                  <h5 style={{overflowY:'hidden'}}> <FontAwesomeIcon icon={faReceipt} className='pe-5' />{item?.title}<FontAwesomeIcon icon={faTrash}  className='ps-5 ms-5 text-danger' onClick={()=>handleDelete(item?.id)} /></h5>
+                  <div className='d-flex ms-4 pt-1'><h6 style={{overflowY:'hidden'}} className='pe-5'>{item?.amount}</h6>
                   <h6 style={{overflowY:'hidden'}} className='pe-5'>{item?.date}</h6>
                   <h6 style={{overflowY:'hidden'}} className='pe-5'>{item?.info}</h6>
                   </div>
