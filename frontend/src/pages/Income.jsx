@@ -99,8 +99,7 @@ function Income() {
                 <Add setIncomesUploadStatus={setIncomesUploadStatus} />
               </div>
               {/* <div className="col-md-1"></div> */}
-              <div className="col-md-7   ">
-
+              <div className="col-md-7 ">
 
 
                 {incomes?.length > 0 ?
