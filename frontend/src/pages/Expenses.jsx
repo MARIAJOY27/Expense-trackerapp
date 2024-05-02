@@ -15,7 +15,7 @@ function Expenses() {
   const[expense,setExpense]=useState([])
 
   const[expenseUploadstatus,setExpenseUploadStatus]=useState({})
-  const[expenseDeleteStatus,setExpenseDeleteStatus]=useState({})
+  const[expenseDeleteStatus,setExpenseDeleteStatus]=useState(false)
   const [show,setShow]=useState(false)
   const [details,setDetails]=useState({
     
@@ -60,20 +60,26 @@ function Expenses() {
  const getExpense=async()=>{
    const result= await getUploadExpenseAPI()
    setExpense(result.data)
-   
+   }
 
-}
+   console.log(expense)
+   let sum=0
+   for(let i=0;i<expense.length;i++){
+    sum+=Number(expense[i].amount)
+   }
+   console.log(sum)
+
 //delete expense
 const handleDelete=async(id)=>{
   const response = await deleteAnExpenseAPI(id)
   console.log(response)
-  setExpenseDeleteStatus()
+  setExpenseDeleteStatus(true)
 }
 
 
 useEffect(()=>{
   getExpense()
-
+setExpenseDeleteStatus(false)
 },[expenseUploadstatus,expenseDeleteStatus])
 
  
@@ -94,7 +100,7 @@ useEffect(()=>{
             <h2 style={{overflowY:'hidden'}} ><b>EXPENSES</b></h2>
             
             <div className='row'>
-            <div className='mt-4 pt-2 w-100 rounded' style={{backgroundColor:'white',height:'60px',textAlign:'center'}}><h5  style={{fontSize:'20px',overflowY:'hidden'}}>Total Expense:  ₹15464</h5></div>
+            <div className='mt-4 pt-2 w-100 rounded' style={{backgroundColor:'white',height:'60px',textAlign:'center'}}><h5  style={{fontSize:'20px',overflowY:'hidden'}}>Total Expense:  ₹{sum}</h5></div>
                 <div className='col-md-4 rounded mt-5 pt-3'>
                     
                  

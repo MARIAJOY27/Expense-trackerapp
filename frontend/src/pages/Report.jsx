@@ -21,6 +21,7 @@ function Report() {
 
   useEffect(() => {
     getIncomeRep()
+    
   }, [])
 
   let sum = 0

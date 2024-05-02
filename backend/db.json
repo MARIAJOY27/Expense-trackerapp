@@ -1,25 +1,11 @@
 {
   "expenses": [
     {
-      "title": "hjhygf",
-      "amount": "60000",
+      "title": "House Loan",
+      "amount": "10000",
       "date": "2024-05-01",
-      "info": "hfj",
+      "info": "EMI",
       "id": 1
-    },
-    {
-      "title": "kjg",
-      "amount": "50000",
-      "date": "2024-05-03",
-      "info": "fjfh",
-      "id": 2
-    },
-    {
-      "title": "kujk",
-      "amount": "100000",
-      "date": "2024-04-02",
-      "info": "hvj",
-      "id": 3
     }
   ],
   "incomes": [
