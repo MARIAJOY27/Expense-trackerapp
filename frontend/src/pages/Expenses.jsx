@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faHouse, faWallet, faMoneyBill, faSquarePollVertical, faPlus, faReceipt, faTrash} from '@fortawesome/free-solid-svg-icons';
 import { ToastContainer, toast } from 'react-toastify';
@@ -6,10 +6,16 @@ import 'react-toastify/dist/ReactToastify.css';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { Link } from 'react-router-dom';
+import { deleteAnExpenseAPI, getUploadExpenseAPI, uploadExpenseAPI } from '../Services/allAPI';
 
 
 
 function Expenses() {
+  //state to hold the expense
+  const[expense,setExpense]=useState([])
+
+  const[expenseUploadstatus,setExpenseUploadStatus]=useState({})
+  const[expenseDeleteStatus,setExpenseDeleteStatus]=useState({})
   const [show,setShow]=useState(false)
   const [details,setDetails]=useState({
     
@@ -24,16 +30,52 @@ function Expenses() {
   const handleShow = () => setShow(true);
 
  
-    const handleUpload=()=>{
+ //Adding Expense
+    const handleUpload= async()=>{
       const {title,amount,date,info} = details
       if(!title || !amount|| !date|| !info){
         toast.info('please fill the form completely')
       }else{
-        toast.success('Expense added successfully')
+       const response =await uploadExpenseAPI(details)
+       console.log(response);
+      if(response.status>=200 && response.status<300){
+        
+        toast.success('Expense added successfully ')
+        setExpenseUploadStatus(response.data)
+        setDetails({
+          title:"",
+          amount:"",
+          date:"",
+          info:""
+        })
         handleClose()
+      }else{
+        console.log(response);
+        toast.error('something went wrong')
+      }
+       
       }
     }
- 
+ //get expense
+ const getExpense=async()=>{
+   const result= await getUploadExpenseAPI()
+   setExpense(result.data)
+   
+
+}
+//delete expense
+const handleDelete=async(id)=>{
+  const response = await deleteAnExpenseAPI(id)
+  console.log(response)
+  setExpenseDeleteStatus()
+}
+
+
+useEffect(()=>{
+  getExpense()
+
+},[expenseUploadstatus,expenseDeleteStatus])
+
  
   return (
     <>
@@ -94,38 +136,25 @@ function Expenses() {
                 
                 <div className='col-md-6 rounded mt-4 pt-3 '>
                    
-                <div className='m-3 p-1 'style={{backgroundColor:'aquamarine'}}>
+                {expense.length>0?expense?.map((item)=>(
+                  <div className='m-3 p-1 'style={{backgroundColor:'aquamarine'}} expenseUploadstatus={expenseUploadstatus} setExpenseUploadStatus={setExpenseUploadStatus} expenseDeleteStatus={expenseDeleteStatus} setExpenseDeleteStatus={setExpenseDeleteStatus}>
                    
-                   <h5 style={{overflowY:'hidden'}}> <FontAwesomeIcon icon={faReceipt} className='pe-5' /> Medical Expense <FontAwesomeIcon icon={faTrash}  className='ps-5 ms-5' /></h5>
-                   <div className='d-flex ms-4 pt-1'><h6 style={{overflowY:'hidden'}} className='pe-5'>₹15</h6>
-                   <h6 style={{overflowY:'hidden'}} className='pe-5'>12/01/2024</h6>
-                   <h6 style={{overflowY:'hidden'}} className='pe-5'>body check up</h6>
-                   </div>
-    
-    
-                   </div>
+                  <h5 style={{overflowY:'hidden'}}> <FontAwesomeIcon icon={faReceipt} className='pe-5' />{item?.title}<FontAwesomeIcon icon={faTrash}  className='ps-5 ms-5 text-danger' onClick={()=>handleDelete(item?.id)} /></h5>
+                  <div className='d-flex ms-4 pt-1'><h6 style={{overflowY:'hidden'}} className='pe-5'>{item?.amount}</h6>
+                  <h6 style={{overflowY:'hidden'}} className='pe-5'>{item?.date}</h6>
+                  <h6 style={{overflowY:'hidden'}} className='pe-5'>{item?.info}</h6>
+                  </div>
+   
+   
+                  </div>
+                ))   :
+                
+                <h5 className='mt-5 text-warning '>No Expense Added Yet...........</h5>
+                
+                }
     
                    
-                   <div className='m-3 p-1 'style={{backgroundColor:'aquamarine'}}>
-                   
-                   <h5 style={{overflowY:'hidden'}}> <FontAwesomeIcon icon={faReceipt} className='pe-5' /> Medical Expense <FontAwesomeIcon icon={faTrash}  className='ps-5 ms-5' /></h5>
-                   <div className='d-flex ms-4 pt-1'><h6 style={{overflowY:'hidden'}} className='pe-5'>₹15</h6>
-                   <h6 style={{overflowY:'hidden'}} className='pe-5'>12/01/2024</h6>
-                   <h6 style={{overflowY:'hidden'}} className='pe-5'>body check up</h6>
-                   </div>
-    
-    
-                   </div>
-                   <div className='m-3 p-1'style={{backgroundColor:'aquamarine',}}>
-                   
-                   <h5 style={{overflowY:'hidden'}}> <FontAwesomeIcon icon={faReceipt} className='pe-5' /> Medical Expense <FontAwesomeIcon icon={faTrash}  className='ps-5 ms-5' /></h5>
-                   <div className='d-flex ms-4 pt-1'><h6 style={{overflowY:'hidden'}} className='pe-5'>₹15</h6>
-                   <h6 style={{overflowY:'hidden'}} className='pe-5'>12/01/2024</h6>
-                   <h6 style={{overflowY:'hidden'}} className='pe-5'>body check up</h6>
-                   </div>
-    
-    
-                   </div>
+                  
     
     
     

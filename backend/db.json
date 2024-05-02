@@ -1,5 +1,13 @@
 {
-  "expenses": [],
+  "expenses": [
+    {
+      "title": "House Loan",
+      "amount": "10000",
+      "date": "2024-04-05",
+      "info": "my house loan",
+      "id": 1
+    }
+  ],
   "incomes": [
     {
       "title": "Freelance",
@@ -16,6 +24,7 @@
       "id": 2
     },
     {
+<<<<<<< HEAD
       "title": "Baking",
       "amount": "5000",
       "date": "2024-04-03",
@@ -28,6 +37,13 @@
       "date": "2024-05-14",
       "reference": "hgf",
       "id": 4
+=======
+      "title": "youtube revenue",
+      "amount": "2000",
+      "date": "2024-04-30",
+      "reference": "my channel revenue",
+      "id": 3
+>>>>>>> 8d27398aa24d54543a28422287503f0d25408f52
     }
   ]
 }
