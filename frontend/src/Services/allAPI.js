@@ -9,7 +9,6 @@ import { commonAPI } from "./commonAPI"
      return await commonAPI('POST',`${serverURL}/incomes`,reqBody)
      
 }
-<<<<<<< HEAD
 
 //api to get uploaded incomes
  export const getIncomeAPI = async()=>{
@@ -20,7 +19,6 @@ import { commonAPI } from "./commonAPI"
  export const deleteAnIncomeAPI= async(id)=>{
     return await commonAPI('DELETE',`${serverURL}/incomes/${id}`,{})
 }
-=======
 //api for adding expense
 export const uploadExpenseAPI = async(reqBody)=>{
     return await commonAPI('POST',`${serverURL}/expenses`,reqBody)
@@ -33,4 +31,3 @@ export const getUploadExpenseAPI = async()=>{
 export const deleteAnExpenseAPI= async(id)=>{
     return await commonAPI('DELETE',`${serverURL}/expenses/${id}`,{})
 }
->>>>>>> 8d27398aa24d54543a28422287503f0d25408f52
