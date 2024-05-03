@@ -6,6 +6,13 @@
       "date": "2024-05-01",
       "info": "EMI",
       "id": 1
+    },
+    {
+      "title": "Shopping",
+      "amount": "1280",
+      "date": "2024-05-01",
+      "info": "Dress",
+      "id": 2
     }
   ],
   "incomes": [
@@ -29,6 +36,65 @@
       "date": "2024-04-03",
       "reference": "jgk",
       "id": 4
+    }
+  ],
+  "users": [
+    {
+      "name": "hari",
+      "email": "hari@gmail.com",
+      "password": "12345",
+      "confirmPassword": "12345",
+      "id": 1
+    },
+    {
+      "name": "harikrishna",
+      "email": "harikrishna@gmail.com",
+      "password": "1234",
+      "confirmPassword": "1234",
+      "id": 2
+    },
+    {},
+    {
+      "name": "christo",
+      "email": "christoo@123",
+      "password": "1234",
+      "confirmPassword": "1234",
+      "id": 4
+    },
+    {
+      "name": "hari123",
+      "email": "hari123@gmail.com",
+      "password": "123",
+      "confirmPassword": "123",
+      "id": 5
+    },
+    {
+      "name": "hari2",
+      "email": "hari2@gmail.com",
+      "password": "123",
+      "confirmPassword": "123",
+      "id": 6
+    },
+    {
+      "name": "anjana prakash",
+      "email": "anjana@gmail.com",
+      "password": "123",
+      "confirmPassword": "123",
+      "id": 7
+    },
+    {
+      "name": "maria",
+      "email": "maria@gmail.com",
+      "password": "123",
+      "confirmPassword": "123",
+      "id": 8
+    },
+    {
+      "name": "seb123",
+      "email": "seb@gmail.com",
+      "password": "234",
+      "confirmPassword": "234",
+      "id": 9
     }
   ]
 }

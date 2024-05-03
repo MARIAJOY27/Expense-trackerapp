@@ -33,3 +33,18 @@ export const deleteAnExpenseAPI= async(id)=>{
     return await commonAPI('DELETE',`${serverURL}/expenses/${id}`,{})
 }
 
+
+//api to add users--Signup 
+export const addUsers = async (reqBody) => {
+    return await commonAPI('POST', `${serverURL}/users`, reqBody)
+}
+
+//api to search is user
+export const getUsers = async () => {
+    return await commonAPI('GET', `${serverURL}/users`, "")
+}
+
+//api to create session
+export const loginSession = async (reqBody) => {
+    return await commonAPI('POST', `${serverURL}/sessionCreate`, reqBody)
+}

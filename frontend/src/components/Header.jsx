@@ -1,21 +1,43 @@
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react'
+import Nav from 'react-bootstrap/Nav';
 import Container from 'react-bootstrap/Container';
+import { faMoneyBillTransfer, faCircleQuestion, faCircleUser, faHouse } from '@fortawesome/free-solid-svg-icons'
 import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom';
 
 function Header() {
   return (
     <>
-      <Navbar  className="bg-body-tertiary">
+      <Navbar expand="lg" className="bg-primary">
         <Container >
-        <Link to={'/'} style={{textDecoration:"none"}}>
-          <Navbar.Brand  className='d-flex'>
-            
-              <img className='ms-3 mt-2 me-3' src="https://play-lh.googleusercontent.com/pvRimUSIXNT5KHU3SCfkD-wLOn_hALI-XuaDXjoncpPr2BAKvMywvtnZW8ZGj4ITOiSP=w240-h480-rw" alt="" width="40" height="40" />
-              {' '}
-              <h3 className='text-center mt-2' style={{overflowY:"hidden",color:"blue"}}>Expense Tracker</h3>
-          </Navbar.Brand>
-          </Link>
+          <Navbar.Brand >
+          <Link to={'/home'} style={{ textDecoration: "none" }}>
+            <FontAwesomeIcon className='me-3' icon={faMoneyBillTransfer} style={{ color: "white", }} /><span style={{ color: 'white' }}><b>Expense Tracker</b></span> </Link>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" /></Navbar.Brand>
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="ms-auto">
+              {/* <Nav.Link className='text-light' href="#link"><FontAwesomeIcon icon={faGear} /></Nav.Link> */}
+              <Link to={'/income'} style={{ textDecoration: 'none' }}>
+                <h6 className='text-light mt-2 me-3' >Income</h6></Link>
+
+              <Link to={'/expenses'} style={{ textDecoration: 'none' }}>
+                <h6 className='text-light mt-2 ms-2 me-3' href="#link">Expense</h6></Link>
+
+              <Link to={'/report'} style={{ textDecoration: 'none' }}>
+                <h6 className='text-light mt-2 ms-2 me-2' href="#link">Report</h6></Link>
+
+              <Nav.Link className='text-light' href=""><FontAwesomeIcon icon={faCircleQuestion} title="Help" /></Nav.Link>
+
+              <Link to={'/'} style={{ textDecoration: 'none' }}>
+                <Nav.Link className='text-light' href='#home' ><FontAwesomeIcon icon={faHouse} title="Home" /></Nav.Link></Link>
+
+              <Nav.Link className='text-light' ><FontAwesomeIcon icon={faCircleUser} title="Profile" /></Nav.Link>
+
+
+            </Nav>
+          </Navbar.Collapse>
         </Container>
       </Navbar>
 
@@ -24,5 +46,3 @@ function Header() {
 }
 
 export default Header
-
-

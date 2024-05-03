@@ -90,13 +90,13 @@ const handleUpload = async()=>{
                     <Button variant="secondary" onClick={handleClose}>
                         Cancel
                     </Button>
-                    <Button variant="warning" onClick={handleUpload}>
+                    <Button variant="success" onClick={handleUpload}>
                         Add
                     </Button>
                 </Modal.Footer>
             </Modal>
 
-            <div className='d-flex   mt-1'>
+            <div className='d-flex mt-1'>
                 <img src={chart} width={'100%'} height={'320px'} alt="" />
             </div>
 
