@@ -13,6 +13,13 @@
       "date": "2024-05-01",
       "info": "Dress",
       "id": 2
+    },
+    {
+      "title": "Travel",
+      "amount": "15000",
+      "date": "2024-04-29",
+      "info": "food,petrol",
+      "id": 3
     }
   ],
   "incomes": [

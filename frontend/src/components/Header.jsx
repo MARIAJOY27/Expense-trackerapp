@@ -11,22 +11,22 @@ function Header() {
   return (
     <>
       <Navbar expand="lg" className="bg-primary">
-        <Container >
-          <Navbar.Brand >
+        <Container style={{height:"70px"}} >
+          <Navbar.Brand>
           <Link to={'/home'} style={{ textDecoration: "none" }}>
-            <FontAwesomeIcon className='me-3' icon={faMoneyBillTransfer} style={{ color: "white", }} /><span style={{ color: 'white' }}><b>Expense Tracker</b></span> </Link>
+            <FontAwesomeIcon className='me-3' icon={faMoneyBillTransfer} size='xl' style={{ color: "white", }} /><span style={{ color: 'white',fontSize:"30px" }}><b>Expense Tracker</b></span> </Link>
           <Navbar.Toggle aria-controls="basic-navbar-nav" /></Navbar.Brand>
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
               {/* <Nav.Link className='text-light' href="#link"><FontAwesomeIcon icon={faGear} /></Nav.Link> */}
               <Link to={'/income'} style={{ textDecoration: 'none' }}>
-                <h6 className='text-light mt-2 me-3' >Income</h6></Link>
+                <h5 className='text-light mt-2 me-3' >Income</h5></Link>
 
               <Link to={'/expenses'} style={{ textDecoration: 'none' }}>
-                <h6 className='text-light mt-2 ms-2 me-3' href="#link">Expense</h6></Link>
+                <h5 className='text-light mt-2 ms-2 me-3' href="#link">Expense</h5></Link>
 
               <Link to={'/report'} style={{ textDecoration: 'none' }}>
-                <h6 className='text-light mt-2 ms-2 me-2' href="#link">Report</h6></Link>
+                <h5 className='text-light mt-2 ms-2 me-2' href="#link">Report</h5></Link>
 
               <Nav.Link className='text-light' href=""><FontAwesomeIcon icon={faCircleQuestion} title="Help" /></Nav.Link>
 

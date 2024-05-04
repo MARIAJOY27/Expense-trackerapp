@@ -7,7 +7,7 @@ import React from 'react'
 function Footer() {
   return (
     <>
-      <div className="row" style={{ backgroundColor: '#78C2AD' }}>
+      <div className="row mt-5" style={{ backgroundColor: '#78C2AD' }}>
         <div className="col-md-3"></div>
         <div className="col-md-6 mt-4 ">
           <div className=" d-flex align-items-center justify-content-center" >
